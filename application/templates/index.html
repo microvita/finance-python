@@ -1,0 +1,37 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block main
+%}
+<div class="container my-3">
+  <h1>Hello! Take your notes</h1>
+  <div class="card my-2 mx-2">
+    <div class="card-body">
+      <h5 class="card-title">Add notes</h5>
+      <form method="POST">
+        <div class="form-group">
+            <textarea
+              class="form-control"
+              placeholder=" write your note here"
+              id="addtext"
+              rows="4"
+              name="note"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary my-3" id="addbtn">Add note</a>
+          <button type="button" class="btn btn-primary my-3 mx-2" id="clrbtn">Clear</a>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <h1 align="center">Notes</h1>
+  <div class="d-flex flex-row">
+    {% for note in user.notes %}
+        <div class=" notecard card my-2 mx-2" style="width: 18rem;">   
+            <div class="card-body">
+                <p class="card-text">{{ note.data }}</p>
+                <button class="btn btn-primary" onClick="deleteNote({{ note.id }})">Delete</button>
+            </div>
+        </div>    
+        {% endfor %}
+  </div>
+  
+</div>
+{% endblock %}
