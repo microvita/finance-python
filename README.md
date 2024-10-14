@@ -1,7 +1,5 @@
 # Micro Notes App
 
-## Video Demo: [Watch Now](https://youtu.be/BDkJZuc71Ww)
-
 ### Description:
 
 #### Overview:
